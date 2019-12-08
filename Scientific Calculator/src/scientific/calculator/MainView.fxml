@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" accessibleRole="RADIO_MENU_ITEM" prefHeight="320.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scientific.calculator.MainController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="445.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#exitWindow" text="Exit" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="about" mnemonicParsing="false" onAction="#aboutWindow" text="About" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+      <VBox alignment="BOTTOM_CENTER" layoutX="-3.0" layoutY="14.0" prefHeight="304.0" prefWidth="474.0">
+         <children>
+            <Label fx:id="text2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" onDragDetected="#applyUnaryFucntions" prefHeight="32.0" prefWidth="399.0">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="text1" alignment="CENTER_RIGHT" prefHeight="31.0" prefWidth="399.0" text="0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin></Label>
+            <HBox alignment="CENTER" prefHeight="205.0" prefWidth="472.0">
+               <children>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="195.0" prefWidth="241.0">
+                     <children>
+                        <HBox alignment="BOTTOM_CENTER" prefHeight="27.0" prefWidth="208.0">
+                           <children>
+                              <RadioButton fx:id="rbDegree" mnemonicParsing="false" onAction="#changeRadioState" selected="true" text="DEG" />
+                              <RadioButton fx:id="rbRadian" mnemonicParsing="false" onAction="#changeRadioState" text="RAD">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbGrad" mnemonicParsing="false" onAction="#changeRadioState" text="GRAD">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="166.0" prefWidth="208.0">
+                           <children>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="166.0" prefWidth="50.0">
+                                 <children>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="42.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="42.0" text="int">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="41.0" text="dms">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="41.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="42.0" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="166.0" prefWidth="51.0">
+                                 <children>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#applyUnaryFucntions" prefHeight="27.0" prefWidth="42.0" text="Inv">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#evaluateTrigonometricFunctions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="41.0" text="sinh">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#evaluateTrigonometricFunctions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="42.0" text="cosh">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#evaluateTrigonometricFunctions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="41.0" text="tanh">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processOperators" prefHeight="27.0" prefWidth="41.0" text="Exp" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="166.0" prefWidth="51.0">
+                                 <children>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#applyUnaryFucntions" prefHeight="27.0" prefWidth="42.0" text="ln">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#evaluateTrigonometricFunctions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="41.0" text="sin">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#evaluateTrigonometricFunctions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="41.0" text="cos">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#evaluateTrigonometricFunctions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="42.0" text="tan">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processOperators" prefHeight="27.0" prefWidth="41.0" text="Mod" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="166.0" prefWidth="52.0">
+                                 <children>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="36.0" text="(">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#applyUnaryFucntions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="41.0" text="x^2">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onDragDetected="#processOperators" prefHeight="27.0" prefWidth="36.0" text="x^y">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#applyUnaryFucntions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="42.0" text="x^5">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="36.0" text="log" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="166.0" prefWidth="47.0">
+                                 <children>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="43.0" text=")">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#applyUnaryFucntions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="42.0" text="n!">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="44.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="41.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#applyUnaryFucntions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="43.0" text="10^x" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="195.0" prefWidth="87.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="31.0" prefWidth="83.0">
+                           <children>
+                              <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="36.0" text="MC" />
+                              <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="36.0" text="MR">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="31.0" prefWidth="83.0">
+                           <children>
+                              <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="36.0" text="&lt;--" />
+                              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#clearInput" prefHeight="27.0" prefWidth="36.0" text="CE">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="31.0" prefWidth="83.0">
+                           <children>
+                              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processNumbers" prefHeight="27.0" prefWidth="36.0" text="7" />
+                              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processNumbers" prefHeight="27.0" prefWidth="36.0" text="8">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="34.0" prefWidth="83.0">
+                           <children>
+                              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processNumbers" prefHeight="27.0" prefWidth="36.0" text="4" />
+                              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processNumbers" prefHeight="27.0" prefWidth="36.0" text="5">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="83.0">
+                           <children>
+                              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processNumbers" prefHeight="27.0" prefWidth="36.0" text="1" />
+                              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processNumbers" prefHeight="27.0" prefWidth="36.0" text="2">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processNumbers" prefHeight="26.0" prefWidth="74.0" text="0">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="195.0" prefWidth="35.0">
+                     <children>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="36.0" text="MS">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#clearInput" prefHeight="27.0" prefWidth="36.0" text="C">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processNumbers" prefHeight="27.0" prefWidth="36.0" text="9">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processNumbers" prefHeight="27.0" prefWidth="36.0" text="6">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processNumbers" prefHeight="27.0" prefWidth="36.0" text="3">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#appendDot" prefHeight="27.0" prefWidth="36.0" text="." />
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="222.0" prefWidth="43.0">
+                     <children>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="36.0" text="M+">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processOperators" prefHeight="27.0" prefWidth="36.0" text="=">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processOperators" prefHeight="27.0" prefWidth="36.0" text="/">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processOperators" prefHeight="27.0" prefWidth="36.0" text="*">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processOperators" prefHeight="27.0" prefWidth="36.0" text="-">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processOperators" prefHeight="27.0" prefWidth="36.0" text="+" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="112.0" prefWidth="37.0">
+                     <children>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="36.0" text="M-">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#applyUnaryFucntions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="42.0" text="sqrt">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#processOperators" prefHeight="27.0" prefWidth="36.0" text="\%">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#applyUnaryFucntions" onDragDetected="#applyUnaryFucntions" prefHeight="27.0" prefWidth="36.0" text="1/x">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#processOperators" prefHeight="60.0" prefWidth="33.0" text="=" />
+                     </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
